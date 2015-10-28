@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--Está diseñado para ocupar un área de la pantalla y mostrar un solo elemento.
+    -Se pueden añadir más hijos pero todos aparecerán alineados arriba a la izquierda
+    -No se puede especificar la posición de los hijos
+    -No es el tipo de layouts más utilizado.
+    -Se puede utilizzr por ejemplo para colocar un floatButton
+
+
+
+-->
+
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Este el el texto del textView. Este texto aparece encima del boton..."/>
+
+
+
+
+</FrameLayout>

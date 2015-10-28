@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--
+-Dispone sus hijos en una sola columna o en una sola fila
+-La dirección de cada fila se puede especificar mediante setOrientation() en código o mediante
+   android:orientation en XML.
+-Se puede especificar gravedad, lo que indicaría la alineación de todos sus hijos.
+-Permite asignar pesos a los hijos de manera individual. Este valor permite a los hijos expandirse
+hasta llenar cualquier espacio libre en la pantalla:android:layout_weight="1"
+
+Es el típico para construir formularios de altas: TextView y EditText debajo y así sucesivamente... ejemplo en
+proyecto Agenda.
+
+-->
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark">
+    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Texto de prueba"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_weight="2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Boton"
+        android:layout_weight="1"/>
+
+</LinearLayout>

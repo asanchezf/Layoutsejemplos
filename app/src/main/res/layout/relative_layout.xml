@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+-Es el más flexible de todos los layouts. Se puede construir cualquier cosa con ellos-
+-La posición de los hijos es relativa respecta al padre e incluso respecto a los hijos
+-Permite realizar interfaz complejas y portables a diferentes tamaños de pantalla.
+-Si no especifica otra cosa, el primer widget se colocará arriba a la izquierda y luego los siguientes en relación a éste y al
+propio layout....
+
+-PROPIEDADES para posicionar un widget con respecto a otros:
+-android:layout_below Debajo de lo que se especifique que tiene el ID definido como valor de este atributo.
+-android:layout_above indica que el elemento se posicionará justo arriba del elemento que tiene el ID definido
+    como valor de este atributo.
+-android:layout_toLeftOf indica que el elemento se posionará a la izquierda del elemento cuyo ID coincida con
+    el definido en el valor de este atributo.
+-android:layout_toRightOf posiciona al elemento a la derecha del elemento cuyo ID coincida con el proporcionado
+        en el valor de este atributo.
+-android:layout_bottom posiciona al elemento debajo del que tenga la ID proporcionada en el valor del atributo.
+
+-PROPIEDADES para posicionar un widget con respecto al padre. El valor será true o false:
+-android:layout_alignParentTop que le indica al widget que su borde superior deberá estar alineado con el
+borde superior del contenedor.
+-android:layout_alignParentBottom que le indica al widget que su borde inferior deberá estar alineado con el
+borde inferior del contenedor.
+-android:layout_alignParentLeft que le indica al widget que su borde izquierdo deberá estar alineado con el
+borde izquierdo del contenedor.
+-android:layout_alignParentRight que le indica al widget que su borde derecho deberá estar alineado con el
+borde derecho del contenedor.
+-android:layout_centerHorizontal permite centrar horizontalmente al widget con respecto a su contenedor.
+android:layout_centerVertical permite centrar verticalmente al widget con respecto a su contenedor.
+
+Cosas a considerar
+Para que podamos trabajar con los atributos listados arriba, es necesario que cuides dos puntos muy importantes:
+Definir identificadores (id’s) por medio del atributo android:id en cada uno de los elementos que estarán dentro del
+contenedor principal RelativeLayout. En esta parte el valor de los atributos irá con el formato android:id=”@+id/[miId]“.
+Poner la referencia correcta hacia otros elementos del layout con la ayuda del formato “@id/elIdDelOtroElemento”,
+NOTA QUE AQUÍ OMITIMOS EL SIGNO DE +. Por ejemplo: android:layout_alignTop=”@id/ok”.
+
+Orden en que se acomodan los elementos
+Algunas veces puede resultar complicado alinear todos los elementos según el diseño que queramos obtener y esto se debe
+a orden de evaluación que toma Android para llevar a cabo esta tarea. Android hace una sola revisión a través del archivo
+XML y calcula el tamaño y posición de cada uno de los elementos que va encontrando en la definición del layout. Por lo
+que a la hora de trabajar con este tipo de contenedor tienes que saber que:
+No puedes hacer referencia a un elemento que aún no ha sido definido. Es decir, si por ejemplo ocupamos un EditText para
+comodar un botón, el EditText deberá estar definido antes de hacer el llamado en el atributo del Button porque sino Android
+lo tomará como un error.
+Hay que tener cuidado a la hora de utilizar el valor fill_parent para los atributos android:layout_width y
+android:layout_height para evitar que un elemento termine acaparándose el espacio que le corresponda a algún elemento
+posterior que dependa de éste para mostrarse.
+
+-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<TextView
+    android:id="@+id/primero"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Soy el primer texto"
+    android:textColor="@android:color/holo_orange_dark"
+    android:background="@android:color/holo_red_dark"
+    />
+
+    <TextView
+        android:id="@+id/segundo"
+        android:layout_below="@id/primero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soy el segundo texto"
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/tercero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Soy el tercer texto"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_dark"
+        android:layout_below="@id/primero"
+        android:layout_toRightOf="@id/segundo"
+        />
+    <!--android:layout_beandroid:layout_below="@id/segundo"low="@id/segundo"-->
+</RelativeLayout>

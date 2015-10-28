@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--
+-Es un layout específico para mostrar tablas.
+-Se puede realizar también con Relativelayout
+-Columnas y filas son sus principales propiedades.
+
+-->
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:text="Texto1"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <TextView
+            android:text="Texto2"
+            android:padding="3dp"
+            android:layout_gravity="center"
+             />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Texto3"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <TextView
+            android:text="Texto4"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            />
+
+    </TableRow>
+
+</TableLayout>
